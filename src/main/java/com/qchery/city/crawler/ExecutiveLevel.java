@@ -13,7 +13,7 @@ public enum ExecutiveLevel {
     /**
      * 区
      */
-    DISTRACT(3);
+    COUNTY(3);
 
     private int level;
 
