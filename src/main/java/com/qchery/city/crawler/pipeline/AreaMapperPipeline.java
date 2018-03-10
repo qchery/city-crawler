@@ -28,7 +28,11 @@ public class AreaMapperPipeline implements Pipeline {
             Map<String, Object> itemsAll = resultItems.getAll();
             AreaMapper mapper = session.getMapper(AreaMapper.class);
             for (Map.Entry<String, Object> entry : itemsAll.entrySet()) {
-                mapper.insert((Area) entry.getValue());
+                Area area = (Area) entry.getValue();
+                if (area.getCode() != null && area.getCode().length() > 6) {
+                    area.setCode(area.getCode().substring(0, 6));
+                }
+                mapper.insert(area);
             }
         }
     }

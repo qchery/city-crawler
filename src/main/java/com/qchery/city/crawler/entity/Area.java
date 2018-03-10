@@ -46,6 +46,10 @@ public class Area implements Serializable {
         return code;
     }
 
+    public void setCode(String code) {
+        this.code = code;
+    }
+
     public ExecutiveLevel getExecutiveLevel() {
         return executiveLevel;
     }
