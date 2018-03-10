@@ -24,4 +24,13 @@ public enum ExecutiveLevel {
     public int getLevel() {
         return level;
     }
+
+    public static ExecutiveLevel parse(int level) {
+        for (ExecutiveLevel executiveLevel : values()) {
+            if (executiveLevel.getLevel() == level) {
+                return executiveLevel;
+            }
+        }
+        return null;
+    }
 }

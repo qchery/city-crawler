@@ -1,6 +1,9 @@
 package com.qchery.city.crawler;
 
-public class Area {
+import java.io.Serializable;
+
+public class Area implements Serializable {
+    private int id;
     /**
      * 名称
      */
@@ -16,39 +19,33 @@ public class Area {
 
     private Area parentArea;
 
-    public Area(String name, ExecutiveLevel executiveLevel) {
+    public Area(int id, String name, ExecutiveLevel executiveLevel) {
+        this.id = id;
         this.name = name;
         this.executiveLevel = executiveLevel;
     }
 
-    public Area(String name, String code, ExecutiveLevel executiveLevel) {
+    public Area(int id, String name, String code, ExecutiveLevel executiveLevel) {
+        this.id = id;
         this.name = name;
         this.code = code;
         this.executiveLevel = executiveLevel;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getCode() {
         return code;
     }
 
-    public void setCode(String code) {
-        this.code = code;
-    }
-
     public ExecutiveLevel getExecutiveLevel() {
         return executiveLevel;
-    }
-
-    public void setExecutiveLevel(ExecutiveLevel executiveLevel) {
-        this.executiveLevel = executiveLevel;
     }
 
     public Area getParentArea() {
