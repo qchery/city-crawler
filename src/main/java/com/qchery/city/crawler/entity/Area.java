@@ -1,4 +1,6 @@
-package com.qchery.city.crawler;
+package com.qchery.city.crawler.entity;
+
+import com.qchery.city.crawler.enums.ExecutiveLevel;
 
 import java.io.Serializable;
 

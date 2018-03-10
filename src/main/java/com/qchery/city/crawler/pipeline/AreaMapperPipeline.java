@@ -1,6 +1,8 @@
-package com.qchery.city.crawler;
+package com.qchery.city.crawler.pipeline;
 
 
+import com.qchery.city.crawler.entity.Area;
+import com.qchery.city.crawler.mapper.AreaMapper;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import us.codecraft.webmagic.ResultItems;
@@ -12,11 +14,11 @@ import java.util.Map;
 /**
  * 记录城市数据
  */
-public class AreaDaoPipeline implements Pipeline {
+public class AreaMapperPipeline implements Pipeline {
 
     private SqlSessionFactory sqlSessionFactory;
 
-    public AreaDaoPipeline(SqlSessionFactory sqlSessionFactory) {
+    public AreaMapperPipeline(SqlSessionFactory sqlSessionFactory) {
         this.sqlSessionFactory = sqlSessionFactory;
     }
 

@@ -1,4 +1,4 @@
-package com.qchery.city.crawler;
+package com.qchery.city.crawler.enums;
 
 public enum ExecutiveLevel {
 

@@ -1,4 +1,4 @@
-package com.qchery.city.crawler;
+package com.qchery.city.crawler.enums;
 
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;

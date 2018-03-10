@@ -4,8 +4,8 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeHandlers>
-        <typeHandler handler="com.qchery.city.crawler.ExecutiveLevelTypeHandler"
-                     javaType="com.qchery.city.crawler.ExecutiveLevel"/>
+        <typeHandler handler="com.qchery.city.crawler.enums.ExecutiveLevelTypeHandler"
+                     javaType="com.qchery.city.crawler.enums.ExecutiveLevel"/>
     </typeHandlers>
     <environments default="development">
         <environment id="development">
@@ -19,6 +19,6 @@
         </environment>
     </environments>
     <mappers>
-        <mapper class="com.qchery.city.crawler.AreaMapper"/>
+        <mapper class="com.qchery.city.crawler.mapper.AreaMapper"/>
     </mappers>
 </configuration>

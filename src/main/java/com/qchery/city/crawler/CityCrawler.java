@@ -1,5 +1,8 @@
 package com.qchery.city.crawler;
 
+import com.qchery.city.crawler.entity.Area;
+import com.qchery.city.crawler.enums.ExecutiveLevel;
+import com.qchery.city.crawler.pipeline.AreaMapperPipeline;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
@@ -29,7 +32,7 @@ public class CityCrawler {
         Spider.create(new StatsGovPageProcessor())
                 .addUrl(INDEX_URL)
                 .thread(8)
-                .addPipeline(new AreaDaoPipeline(sqlSessionFactory)).run();
+                .addPipeline(new AreaMapperPipeline(sqlSessionFactory)).run();
     }
 
     private static class StatsGovPageProcessor implements PageProcessor {

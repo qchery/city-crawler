@@ -14,7 +14,6 @@ dependencies {
 
     compile (
             "us.codecraft:webmagic-core:0.7.3",
-            "us.codecraft:webmagic-extension:0.7.3",
             "org.mybatis:mybatis:3.4.5",
             "mysql:mysql-connector-java:5.1.45"
     )

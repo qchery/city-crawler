@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.qchery.city.crawler.AreaMapper">
+<mapper namespace="com.qchery.city.crawler.mapper.AreaMapper">
     <select id="insert">
         insert into sys_area(id, code, level, name, parent_id, parent_name)
         values (#{id}, #{code}, #{executiveLevel}, #{name}, #{parentArea.id}, #{parentArea.name});
