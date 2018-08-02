@@ -40,6 +40,7 @@ public class CityCrawler {
 
         private Site site = Site.me().setRetryTimes(3)
                 .setCycleRetryTimes(3)
+                .setSleepTime(50)
                 .setTimeOut(10000).setDomain("www.stats.gov.cn");
 
         private AtomicInteger idGen = new AtomicInteger();
@@ -92,11 +93,10 @@ public class CityCrawler {
         }
 
         private void processCounty(Page page) {
-            Selectable countyTable = page.getHtml().xpath("//table[@class=countytable]");
-            List<Selectable> nodes = countyTable.xpath("//tr[@class=countytr]").nodes();
+            List<Selectable> nodes = page.getHtml().xpath("//table[@class=countytable]//tr[@class=countytr]").nodes();
             for (Selectable node : nodes) {
-                String code = node.xpath("//td[1]/a/text()").toString();
-                String name = node.xpath("//td[2]/a/text()").toString();
+                String code = node.xpath("//td[1]/a/text()|//td[1]/text()").toString();
+                String name = node.xpath("//td[2]/a/text()|//td[2]/text()").toString();
                 if (name != null) {
                     Area county = new Area(idGen.incrementAndGet(), name, code, ExecutiveLevel.COUNTY);
                     county.setParentArea(Area.class.cast(page.getRequest().getExtra("city")));
